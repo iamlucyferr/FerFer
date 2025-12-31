@@ -1,6 +1,6 @@
 {
-  "validLicenses": [
-    "LICENSE-FerFer-168",
-    "LICENSE-XYZ-789"
-  ]
+  "LICENSE_PAIRS": {
+    "5120052124": "FERFER-ADMIN-001",
+    "1234567890": "FERFER-ADMIN-002"
+  }
 }
