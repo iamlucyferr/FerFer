@@ -1,6 +1,12 @@
 {
   "LICENSE_PAIRS": {
-    "5120052124": "FERFER-ADMIN-001",
-    "1234567890": "FERFER-ADMIN-002"
+    "5120052124": {
+      "key": "FERFER-ADMIN-001",
+      "bound": true
+    },
+    "0": {
+      "key": "FERFER-ADMIN-002",
+      "bound": false
+    }
   }
 }
