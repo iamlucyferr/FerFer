@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Simple License Editor</title>
+<title>License Editor</title>
 
 <style>
 body {
@@ -12,21 +12,23 @@ body {
   padding:20px;
 }
 
-h1 {
-  text-align:center;
-}
+h1 { text-align:center; }
 
-.box {
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  margin-bottom:20px;
+.hidden { display:none; }
+
+.center {
+  max-width:400px;
+  margin:auto;
+  text-align:center;
+  margin-top:100px;
 }
 
 input, button {
-  padding:8px;
+  padding:10px;
   border-radius:6px;
   border:none;
+  width:100%;
+  margin:5px 0;
 }
 
 button {
@@ -37,6 +39,7 @@ button {
 table {
   width:100%;
   border-collapse:collapse;
+  margin-top:20px;
 }
 
 th, td {
@@ -45,21 +48,24 @@ th, td {
   text-align:center;
 }
 
-.delete {
-  background:#ef4444;
-}
-
-.export {
-  margin-top:20px;
-  width:100%;
-  background:#38bdf8;
-}
+.delete { background:#ef4444; }
+.export { background:#38bdf8; margin-top:20px; }
 </style>
 </head>
 
 <body>
 
-<h1>🔑 License Editor</h1>
+<!-- 🔐 LOGIN -->
+<div id="login" class="center">
+  <h1>🔐 License Editor</h1>
+  <input id="password" type="password" placeholder="Enter password">
+  <button onclick="login()">Unlock</button>
+</div>
+
+<!-- 🧾 EDITOR -->
+<div id="editor" class="hidden">
+
+<h1>🔑 License Manager</h1>
 
 <div class="box">
   <input id="key" placeholder="LICENSE-KEY">
@@ -80,13 +86,29 @@ th, td {
 
 <button class="export" onclick="exportJSON()">⬇ Export licenses.json</button>
 
+</div>
+
 <script>
+/* 🔐 CHANGE PASSWORD HERE */
+const PASSWORD = "ferfer123";
+
+/* LOGIN */
+function login() {
+  const input = document.getElementById("password").value;
+  if (input === PASSWORD) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("editor").classList.remove("hidden");
+  } else {
+    alert("Wrong password");
+  }
+}
+
+/* LICENSE SYSTEM */
 let licenses = { validLicenses: [] };
 
 function add() {
   const key = document.getElementById("key").value.trim();
   const date = document.getElementById("date").value;
-
   if (!key || !date) return alert("Missing data");
 
   licenses.validLicenses.push({
@@ -106,7 +128,6 @@ function remove(i) {
 function render() {
   const list = document.getElementById("list");
   list.innerHTML = "";
-
   licenses.validLicenses.forEach((l, i) => {
     list.innerHTML += `
       <tr>
