@@ -1,10 +1,6 @@
 {
-  "FERFER-OWNER-2026": {
-    "owner": "Lucyferlovely",
-    "active": true
-  },
-  "FERFER-ADMIN-LOCK": {
-    "owner": "BabeKtoy",
-    "active": true
+  "FERFER-ADMIN-001": {
+    "owners": [123456789, 987654321],
+    "users": [111111111, 222222222]
   }
 }
