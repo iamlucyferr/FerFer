@@ -2,11 +2,13 @@
   "validLicenses": [
     {
       "key": "FERFER-ADMIN-001",
-      "expires": "2027-01-01T00:29:59Z"
+      "expires": "2026-01-15T23:59:59Z",
+      "owner": "Lucyferlovely"
     },
     {
       "key": "FERFER-ADMIN-002",
-      "expires": "2026-06-30T23:59:59Z"
+      "expires": "2026-02-01T23:59:59Z",
+      "owner": "AnotherUser"
     }
   ]
 }
