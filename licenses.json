@@ -1,10 +1,8 @@
 {
-  "FERFER-ADMIN-001": {
-    "global": false,
-    "users": [9460535304]
-  },
-  "FERFER-ADMIN-002": {
-    "global": true,
-    "users": []
-  }
+  "validLicenses": [
+    "FERFER-ADMIN-001",
+    "FERFER-ADMIN-002",
+    "FERFER-ADMIN-DEV",
+    "FERFER-ADMIN-LIFETIME"
+  ]
 }
