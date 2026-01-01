@@ -1,12 +1,10 @@
 {
-  "LICENSE_PAIRS": {
-    "5120052124": {
-      "key": "FERFER-ADMIN-001",
-      "bound": false
-    },
-    "0": {
-      "key": "FERFER-ADMIN-002",
-      "bound": false
-    }
+  "FERFER-OWNER-2026": {
+    "owner": "baby jeci",
+    "active": true
+  },
+  "FERFER-ADMIN-LOCK": {
+    "owner": "baby jeci",
+    "active": true
   }
 }
