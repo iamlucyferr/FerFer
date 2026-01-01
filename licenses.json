@@ -1,7 +1,12 @@
 {
   "validLicenses": [
-    "FERFER-ADMIN-DEV",
-    "FERFER-ADMIN-999",
-    "FERFER-ADMIN-001"
+    {
+      "key": "FERFER-ADMIN-001",
+      "expires": "2027-01-01T00:29:59Z"
+    },
+    {
+      "key": "FERFER-ADMIN-002",
+      "expires": "2026-06-30T23:59:59Z"
+    }
   ]
 }
