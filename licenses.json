@@ -1,14 +1,32 @@
 {
+  "config": {
+    "webhook": "https://discord.com/api/webhooks/1456154868405375036/uIgidAr7ESw1jd7FE-lQujzCxzH5-ySv0_O_2uA0her4b1xOR91sTDeKyVuhvcGVSztT",
+    "emoji": {
+      "valid": "✅",
+      "expired": "❌",
+      "time": "⏳",
+      "game": "🎮",
+      "admin": "👑"
+    }
+  },
   "validLicenses": [
     {
       "key": "FERFER-ADMIN-001",
       "expires": "2026-01-15T23:59:59Z",
-      "owner": "Lucyferlovely"
+      "owner": "Lucyferlovely",
+      "statusEmoji": "✅"
     },
     {
       "key": "FERFER-ADMIN-002",
       "expires": "2026-02-01T23:59:59Z",
-      "owner": "AnotherUser"
+      "owner": "TestUser",
+      "statusEmoji": "⏳"
+    },
+    {
+      "key": "FERFER-ADMIN-003",
+      "expires": "2026-03-01T23:59:59Z",
+      "owner": "AnotherUser",
+      "statusEmoji": "⏳"
     }
   ]
 }
