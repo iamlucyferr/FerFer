@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple License Editor</title>
+
+<style>
+body {
+  background:#0f172a;
+  color:white;
+  font-family:Arial, sans-serif;
+  padding:20px;
+}
+
+h1 {
+  text-align:center;
+}
+
+.box {
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+input, button {
+  padding:8px;
+  border-radius:6px;
+  border:none;
+}
+
+button {
+  background:#22c55e;
+  cursor:pointer;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+th, td {
+  padding:10px;
+  border-bottom:1px solid #334155;
+  text-align:center;
+}
+
+.delete {
+  background:#ef4444;
+}
+
+.export {
+  margin-top:20px;
+  width:100%;
+  background:#38bdf8;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔑 License Editor</h1>
+
+<div class="box">
+  <input id="key" placeholder="LICENSE-KEY">
+  <input id="date" type="datetime-local">
+  <button onclick="add()">Add</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Expires</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="list"></tbody>
+</table>
+
+<button class="export" onclick="exportJSON()">⬇ Export licenses.json</button>
+
+<script>
+let licenses = { validLicenses: [] };
+
+function add() {
+  const key = document.getElementById("key").value.trim();
+  const date = document.getElementById("date").value;
+
+  if (!key || !date) return alert("Missing data");
+
+  licenses.validLicenses.push({
+    key: key,
+    expires: new Date(date).toISOString()
+  });
+
+  document.getElementById("key").value = "";
+  render();
+}
+
+function remove(i) {
+  licenses.validLicenses.splice(i, 1);
+  render();
+}
+
+function render() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  licenses.validLicenses.forEach((l, i) => {
+    list.innerHTML += `
+      <tr>
+        <td>${l.key}</td>
+        <td>${l.expires}</td>
+        <td><button class="delete" onclick="remove(${i})">Delete</button></td>
+      </tr>
+    `;
+  });
+}
+
+function exportJSON() {
+  const data = JSON.stringify(licenses, null, 2);
+  const blob = new Blob([data], { type:"application/json" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "licenses.json";
+  a.click();
+}
+</script>
+
+</body>
+</html>
