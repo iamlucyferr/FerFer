@@ -1,8 +1,12 @@
 {
-  "FERFER-ADMIN-001": {
-    "gameId": 1234567890,
-    "owners": [5123456789],
-    "users": [111111111, 222222222],
-    "bound": {}
+  "LICENSE_PAIRS": {
+    "5120052124": {
+      "key": "FERFER-ADMIN-001",
+      "bound": true
+    },
+    "0": {
+      "key": "FERFER-ADMIN-002",
+      "bound": false
+    }
   }
 }
